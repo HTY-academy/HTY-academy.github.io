@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chess Academy – Unleash Your Inner Grandmaster!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --primary:#9f6bf5;
+  --primary-dark:#7d4ce7;
+  --secondary:#ede5ff;
+  --text-dark:#1a1a1a;
+  --text-light:#ffffff;
+  --nav-height:72px;                   /* keep nav height in one place */
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{color:var(--text-dark);line-height:1.6;}
+
+/* ---------------- NAVBAR ---------------- */
+header{                       /* hero section */
+  height:100vh;               /* full-screen */
+  background:url('images/chess_2.jpeg') center/cover no-repeat;
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+  padding-top:var(--nav-height);   /* push content below fixed nav */
+}
+header::before{               /* radial purple overlay */
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at center,
+              rgba(159,107,245,.4) 0%,
+              rgba(125,76,231,.4) 40%,
+              rgba(33,0,77,.4) 100%);
+  mix-blend-mode:multiply;
+}
+.hero-text{
+  color:var(--text-light);text-align:center;position:relative;z-index:1;
+}
+.hero-text h1{font-size:2.4rem;line-height:1.2;font-weight:700;position:relative}
+.hero-text h1::before{        /* soft purple circle behind text */
+  content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:480px;height:480px;background:var(--primary);border-radius:50%;opacity:.4;z-index:-1;
+}
+.navbar{
+  position:fixed;
+  top:0;left:0;width:100%;
+  height:var(--nav-height);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 1.25rem;
+  background:rgba(159,107,245,.25);          /* light glass */
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.12);
+  transition:background .3s ease,box-shadow .3s ease;
+  z-index:1000;
+}
+.navbar.scrolled{                            /* darker after hero */
+  background:rgba(48,14,95,.85);
+  box-shadow:0 4px 12px rgba(0,0,0,.25);
+}
+.logo{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background-image:url("images/5f6fbedd-7089-4110-a848-19c3867e7ada.jpeg");
+  background-size:contain;      /* show the entire image */
+  background-position:center;
+  background-repeat:no-repeat;
+  flex-shrink:0;                /* keep its size in flex layouts */
+}
+
+.nav-links{list-style:none;display:flex;gap:1.5rem;font-weight:500;font-size:.9rem}
+.nav-links a{color:var(--text-light);text-decoration:none;transition:opacity .2s}
+.nav-links a:hover{opacity:.8}
+
+
+  
+    .btn-primary {
+      background: var(--primary);
+      color: var(--text-light);
+      border: none;
+      padding: 0.55rem 1.2rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+      color: var(--text-light);
+      /* //min-height: 1000px; */
+      background-image: url('images/chess_2.jpeg'); /* Add your image URL here */
+      background-size: cover; /* Ensures the image covers the entire section */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat;
+    }
+
+ /* === purple circle behind hero headline === */
+    .hero h1{
+      position: relative;          /* make the h1 the positioning anchor          */
+      z-index: 1;                  /* keep the text above the circle               */
+    }
+
+    .hero h1::before{
+      content: "";
+      position: absolute;
+      left: 50%;                   /* centre of the h1 */
+      top: 50%;
+      transform: translate(-50%,-50%);  /* perfectly centre the circle */
+      width: 500px;                /* adjust to taste / make responsive if needed */
+      height: 500px;
+      background: var(--primary);  /* uses the same purple you defined in :root    */
+      border-radius: 50%;          /* circle shape                                 */
+      opacity: 0.40;               /* let the background photo show through a bit  */
+      z-index: -1;                 /* send the circle behind the text              */
+    }
+
+
+    /* ---------- Generic Section ---------- */
+    section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3rem 1.25rem;
+    }
+
+    h2.section-title {
+      text-align: center;
+      font-size: 1.6rem;
+      color: var(--primary-dark);
+      margin-bottom: 2rem;
+    }
+
+    /* ---------- Coach Section ---------- */
+    .coach-card {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .coach-card img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--secondary);
+    }
+
+    .coach-card h3 { font-size: 1.2rem; }
+
+    .coach-card p { font-size: 0.85rem; color: #666; }
+
+    /* ---------- Achievements Section ---------- */
+    .achievements {
+      background: var(--secondary);
+      width: 100%;
+    }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .achievement-item {
+      width: 100%;
+      padding-top: 100%; /* 1:1 ratio */
+      background: #d3d3d3;
+      border-radius: 6px;
+    }
+   #a1 {
+
+      background-image: url('images/1a262f47-9146-46f4-a250-9d5c785ad495.jpeg'); /* Add your image URL here */
+      background-size: cover; /* Ensures the image covers the entire section */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat;
+    }
+       #a2 {
+      background-image: url('images/4a336a71-7abd-437e-803f-665d5f23e1c5.jpeg'); /* Add your image URL here */
+      background-size: cover; /* Ensures the image covers the entire section */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat;
+    }
+
+       #a3 {
+      background-image: url('images/4da0f060-4859-4ef5-aba2-e7948eec6e0d.jpeg'); /* Add your image URL here */
+      background-size: cover; /* Ensures the image covers the entire section */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat;
+    }
+
+       #a4 {
+      background-image: url('images/31beccc9-e8b7-40a6-b8b0-b467246f1093.jpeg'); /* Add your image URL here */
+      background-size: cover; /* Ensures the image covers the entire section */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat;
+    }
+
+       #a5 {
+      background-image: url('images/7f727789-67bb-4e75-8260-ec27b5b08298.jpeg'); /* Add your image URL here */
+      background-size: cover; /* Ensures the image covers the entire section */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat;
+    }
+    #a6 {
+      background-image: url('images/8c3ea8c7-b9e8-486a-9f21-9dded11cc7db.jpeg'); /* Add your image URL here */
+      background-size: cover; /* Ensures the image covers the entire section */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat;
+    }
+
+
+    .read-more-container {
+      margin-top: 1.5rem;
+      text-align: right;
+    }
+
+    /* ---------- Classes Section ---------- */
+    .classes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+    }
+
+    .class-card {
+      width: 100%;
+      max-width: 220px;
+      background: #d3d3d3;
+      border-radius: 6px;
+      padding-top: 75%; /* 4:3 */
+      position: relative;
+    }
+
+    .class-card span {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 0.5rem;
+      font-weight: 600;
+      background: linear-gradient(transparent, rgba(0,0,0,0.55));
+      color: var(--text-light);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* ---------- Call To Action ---------- */
+    .section-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--secondary);
+      padding: 2rem 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+    }
+
+    footer h4 { font-size: 0.95rem; margin-bottom: 0.5rem; }
+
+    footer p { margin-bottom: 0.3rem; }
+
+    /* ---------- Utility ---------- */
+    @media (min-width: 600px) {
+      .hero h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== Header / Hero ========== -->
+<nav class="navbar">
+  <div class="logo"></div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#classes">Classes</a></li>
+  </ul>
+  <button class="btn-primary">Contact Us</button>
+</nav>
+
+<!-- *************** HERO / HEADER *************** -->
+<header>
+  <div class="hero-text">
+    <h1>Unleash Your<br>Inner Grandmaster!</h1>
+  </div>
+</header>
+
+  <!-- ========== Coach Section ========== -->
+  <section id="coach">
+    <h2 class="section-title">Our Coach</h2>
+  
+    <div class="coach-card">
+      <img src="images\ZhiHong.jpeg" alt="Coach portrait" />
+      <h3>Lim Zhi Hong</h3>
+      <p>National Arbiter<br>
+FIDE School Instructor </p>
+    </div>
+  </section>
+
+  <!-- ========== Achievements Section ========== -->
+  <section id="achievements" class="achievements">
+    <h2 class="section-title">Coach and Students' Achievements</h2>
+    <div class="achievement-grid">
+      <div class="achievement-item" id ="a1"></div>
+      <div class="achievement-item" id ="a2"></div>
+      <div class="achievement-item" id ="a3"></div>
+      <div class="achievement-item" id ="a4"></div>
+      <div class="achievement-item" id ="a5"></div>
+      <div class="achievement-item" id ="a6"></div>
+    </div>
+    <div class="read-more-container">
+      <button class="btn-primary" style="font-size:0.8rem; padding:0.4rem 1rem;">Read More</button>
+    </div>
+  </section>
+
+  <!-- ========== Classes Section ========== -->
+  <section id="classes">
+    <h2 class="section-title">Our Classes</h2>
+    <div class="classes-grid">
+      <div class="class-card"><span>International Chess</span></div>
+      <div class="class-card"><span>Chinese Chess</span></div>
+    </div>
+    <div class="section-cta">
+      <button class="btn-primary" style="min-width:135px;">Contact Us</button>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <div style="max-width:var(--max-width);margin:0 auto;display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+      <div>
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:info@grandmasteracademy.com">info@grandmasteracademy.com</a></p>
+        <p>Tel: +65 1234 5678</p>
+      </div>
+      <div>
+        <h4>Address</h4>
+        <p>123 King’s Gambit Street,<br />#04‑89, The Chess Centre,<br />Prince, Singapore</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+  const navbar = document.querySelector('.navbar');
+  const header = document.querySelector('header');
+
+  window.addEventListener('scroll', () => {
+    const headerBottom = header.offsetHeight;
+    if (window.scrollY > headerBottom - 70) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+
+</body>
+</html>
