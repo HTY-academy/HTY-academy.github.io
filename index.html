@@ -224,6 +224,18 @@ header::before{               /* radial purple overlay */
       background-position: center; /* Centers the image */
       background-repeat: no-repeat;
     }
+        #IC {
+      background-image: url('images/Chess_3.jpeg'); /* Add your image URL here */
+      background-size: cover; /* Ensures the image covers the entire section */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat;
+    }
+        #CC {
+      background-image: url('images/CChes.jpeg'); /* Add your image URL here */
+      background-size: cover; /* Ensures the image covers the entire section */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat;
+    }
 
 
     .read-more-container {
@@ -240,10 +252,10 @@ header::before{               /* radial purple overlay */
     }
 
     .class-card {
-      width: 100%;
-      max-width: 220px;
+      width: 50vh;
+      max-height: 20vh;
       background: #d3d3d3;
-      border-radius: 6px;
+      border-radius: 10px;
       padding-top: 75%; /* 4:3 */
       position: relative;
     }
@@ -339,8 +351,8 @@ FIDE School Instructor </p>
   <section id="classes">
     <h2 class="section-title">Our Classes</h2>
     <div class="classes-grid">
-      <div class="class-card"><span>International Chess</span></div>
-      <div class="class-card"><span>Chinese Chess</span></div>
+      <div class="class-card" id="IC"><span>International Chess</span></div>
+      <div class="class-card" id="CC"><span>Chinese Chess</span></div>
     </div>
     <div class="section-cta">
       <button class="btn-primary" style="min-width:135px;">Contact Us</button>
